@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import { motion as Motion } from "framer-motion";
 import emailjs from '@emailjs/browser';
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaGithub, FaLinkedin, FaPaperPlane } from "react-icons/fa";
+import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaGithub, FaLinkedin, FaPaperPlane, FaInstagram, } from "react-icons/fa"
 
 export default function Contact() {
   const form = useRef();
@@ -90,6 +90,12 @@ export default function Contact() {
       icon: <FaLinkedin />,
       url: "https://linkedin.com/in/chinmay-j",
       color: "#0A66C2"
+    },
+    {
+      icon: <FaInstagram />,
+      title: "Instagram",
+      value: "@chinmay_cj7",
+      link: "https://www.instagram.com/chinmay_cj7"
     }
   ];
 
