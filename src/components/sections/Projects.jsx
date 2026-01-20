@@ -2,6 +2,7 @@ import React from "react";
 import { motion as Motion } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt, FaReact, FaNode, FaDatabase } from "react-icons/fa";
 import { SiMongodb, SiExpress, SiJavascript, SiHtml5, SiCss3 } from "react-icons/si";
+import Tilt from 'react-parallax-tilt';
 
 export default function Projects() {
   const projects = [
@@ -72,92 +73,99 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="card group"
             >
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                {/* Left - Project Info */}
-                <div className="lg:col-span-2">
-                  <div className="flex items-start justify-between mb-4">
-                    <div>
-                      <h3 className="text-2xl font-bold mb-2 group-hover:text-gradient transition">
-                        {project.title}
-                      </h3>
-                      <p className="text-secondary leading-relaxed">
-                        {project.description}
-                      </p>
+              <Tilt
+                tiltMaxAngleX={5}
+                tiltMaxAngleY={5}
+                scale={1.02}
+                transitionSpeed={2500}
+                className="card group h-full"
+              >
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                  {/* Left - Project Info */}
+                  <div className="lg:col-span-2">
+                    <div className="flex items-start justify-between mb-4">
+                      <div>
+                        <h3 className="text-2xl font-bold mb-2 group-hover:text-gradient transition">
+                          {project.title}
+                        </h3>
+                        <p className="text-secondary leading-relaxed">
+                          {project.description}
+                        </p>
+                      </div>
                     </div>
-                  </div>
 
-                  {/* Features */}
-                  <div className="mb-6">
-                    <h4 className="font-semibold text-sm uppercase tracking-wide text-muted mb-3">
-                      Key Features
-                    </h4>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                      {project.features.map((feature, idx) => (
-                        <div key={idx} className="flex items-start gap-2">
-                          <span className="text-gradient text-lg">•</span>
-                          <span className="text-sm text-secondary">{feature}</span>
-                        </div>
-                      ))}
+                    {/* Features */}
+                    <div className="mb-6">
+                      <h4 className="font-semibold text-sm uppercase tracking-wide text-muted mb-3">
+                        Key Features
+                      </h4>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                        {project.features.map((feature, idx) => (
+                          <div key={idx} className="flex items-start gap-2">
+                            <span className="text-gradient text-lg">•</span>
+                            <span className="text-sm text-secondary">{feature}</span>
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                  </div>
 
-                  {/* Technologies */}
-                  <div className="mb-6">
-                    <h4 className="font-semibold text-sm uppercase tracking-wide text-muted mb-3">
-                      Technologies Used
-                    </h4>
-                    <div className="flex flex-wrap gap-3">
-                      {project.technologies.map((tech, idx) => (
-                        <div
-                          key={idx}
-                          className="flex items-center gap-2 px-4 py-2 bg-bg-secondary rounded-lg border border-card-border hover:border-primary-start transition"
-                        >
-                          <span className="text-xl text-gradient">{tech.icon}</span>
-                          <span className="text-sm font-medium">{tech.name}</span>
-                        </div>
-                      ))}
+                    {/* Technologies */}
+                    <div className="mb-6">
+                      <h4 className="font-semibold text-sm uppercase tracking-wide text-muted mb-3">
+                        Technologies Used
+                      </h4>
+                      <div className="flex flex-wrap gap-3">
+                        {project.technologies.map((tech, idx) => (
+                          <div
+                            key={idx}
+                            className="flex items-center gap-2 px-4 py-2 bg-bg-secondary rounded-lg border border-card-border hover:border-primary-start transition"
+                          >
+                            <span className="text-xl text-gradient">{tech.icon}</span>
+                            <span className="text-sm font-medium">{tech.name}</span>
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                  </div>
 
-                  {/* Links */}
-                  <div className="flex gap-3">
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn btn-primary"
-                    >
-                      <FaGithub />
-                      View on GitHub
-                    </a>
-                    {project.live && (
+                    {/* Links */}
+                    <div className="flex gap-3">
                       <a
-                        href={project.live}
+                        href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="btn btn-outline"
+                        className="btn btn-primary"
                       >
-                        <FaExternalLinkAlt />
-                        Live Demo
+                        <FaGithub />
+                        View on GitHub
                       </a>
-                    )}
+                      {project.live && (
+                        <a
+                          href={project.live}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="btn btn-outline"
+                        >
+                          <FaExternalLinkAlt />
+                          Live Demo
+                        </a>
+                      )}
+                    </div>
                   </div>
-                </div>
 
-                {/* Right - Visual Element */}
-                <div className="flex items-center justify-center">
-                  <div className={`w-full h-64 rounded-xl bg-gradient-to-br ${project.gradient} flex items-center justify-center text-white shadow-xl group-hover:scale-105 transition-transform`}>
-                    <div className="text-center p-6">
-                      <div className="text-6xl mb-4">
-                        {project.technologies[0].icon}
+                  {/* Right - Visual Element */}
+                  <div className="flex items-center justify-center">
+                    <div className={`w-full h-64 rounded-xl bg-gradient-to-br ${project.gradient} flex items-center justify-center text-white shadow-xl group-hover:scale-105 transition-transform`}>
+                      <div className="text-center p-6">
+                        <div className="text-6xl mb-4 text-white drop-shadow-lg">
+                          {project.technologies[0].icon}
+                        </div>
+                        <p className="font-bold text-xl drop-shadow-md">{project.title}</p>
                       </div>
-                      <p className="font-bold text-xl">{project.title}</p>
                     </div>
                   </div>
                 </div>
-              </div>
+              </Tilt>
             </Motion.div>
           ))}
         </div>

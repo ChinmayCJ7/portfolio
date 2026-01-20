@@ -62,7 +62,7 @@ export default function Footer() {
 
         <div className="border-t border-white/10 pt-8 text-center">
           <p className="text-white/60 text-sm">
-            © {currentYear} Chinmay J. Built with ❤️ using React & Vite
+            © {currentYear} Chinmay J
           </p>
         </div>
       </div>
