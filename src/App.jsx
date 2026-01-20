@@ -10,6 +10,7 @@ import Certificates from '@/components/sections/Certificates';
 import Achievements from '@/components/sections/Achievements';
 import Contact from '@/components/sections/Contact';
 
+
 export default function App() {
   return (
     <div className="min-h-screen bg-white">
