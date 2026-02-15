@@ -1,6 +1,6 @@
-import Hero from "./components/Hero";
-import MouseGridBackground from "./components/MouseGridBackground";
-import Navbar from "./components/Navbar";
+import Hero from "./components/Hero.jsx";
+import MouseGridBackground from "./components/MouseGridBackground.jsx";
+import Navbar from "./components/Navbar.jsx";
 
 function App() {
   return (
