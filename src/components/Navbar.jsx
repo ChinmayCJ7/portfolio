@@ -10,7 +10,7 @@ const Navbar = () => {
         
         <div className="flex items-center gap-10">
           
-          <h1 className="font-semibold text-lg">Chinmay</h1>
+          <a href="#home" className="font-semibold text-lg">Chinmay</a>
 
           <div className="hidden md:flex gap-8 text-sm">
             <a href="#home" className="hover:text-blue-500 transition">Home</a>
